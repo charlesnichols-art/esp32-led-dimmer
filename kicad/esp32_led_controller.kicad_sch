@@ -1,0 +1,114 @@
+(kicad_sch (version 20230121)
+
+  (uuid "12345678-1234-1234-1234-123456789abc")
+
+  (paper "A4")
+
+  (title_block
+    (title "ESP32-C3 LED Dimmer - Main Controller")
+    (date "2026-05-28")
+    (rev "1.0")
+    (comment 1 "LED Dimmer with TIP41C Power Transistor")
+    (comment 2 "Input: 20V DeWalt Battery")
+    (comment 3 "Output: PWM Dimmed LED Bar (5-30V)")
+  )
+
+  (layers
+    (0 "F.Cu" signal)
+    (31 "B.Cu" signal)
+  )
+
+  (symbol "Device:R"
+    (pin_numbers hide)
+    (pin_names (offset 0.254))
+    (property "Reference" "R" (id 0) (at 2.032 0 90))
+    (property "Value" "R" (id 1) (at 0 0 90))
+    (symbol "R_0_1"
+      (rectangle (start -1.016 -2.54) (end 1.016 2.54)
+        (stroke (width 0.254)) (fill (type none))
+      )
+    )
+    (symbol "R_1_1"
+      (pin passive line (at 0 3.81 270) (length 1.27) (name "~" (effects (font (size 1.27 1.27) (thickness 0.15)))) (number "1" (effects (font (size 1.27 1.27) (thickness 0.15)))))
+      (pin passive line (at 0 -3.81 90) (length 1.27) (name "~" (effects (font (size 1.27 1.27) (thickness 0.15)))) (number "2" (effects (font (size 1.27 1.27) (thickness 0.15)))))
+    )
+  )
+
+  (symbol "Device:C"
+    (pin_numbers hide)
+    (pin_names (offset 0.254))
+    (property "Reference" "C" (id 0) (at 0.635 2.54 0))
+    (property "Value" "C" (id 1) (at 0.635 -2.54 0))
+    (symbol "C_0_1"
+      (polyline (pts (xy -2.032 -0.762) (xy 2.032 -0.762)) (stroke (width 0.508)))
+      (polyline (pts (xy -2.032 0.762) (xy 2.032 0.762)) (stroke (width 0.508)))
+    )
+    (symbol "C_1_1"
+      (pin passive line (at 0 3.81 270) (length 3.048) (name "~" (effects (font (size 1.27 1.27) (thickness 0.15)))) (number "1" (effects (font (size 1.27 1.27) (thickness 0.15)))))
+      (pin passive line (at 0 -3.81 90) (length 3.048) (name "~" (effects (font (size 1.27 1.27) (thickness 0.15)))) (number "2" (effects (font (size 1.27 1.27) (thickness 0.15)))))
+    )
+  )
+
+  (symbol "Transistor_BJT:TIP41C"
+    (pin_names (offset 0.254))
+    (property "Reference" "Q" (id 0) (at 5.08 1.905 0))
+    (property "Value" "TIP41C" (id 1) (at 5.08 -1.905 0))
+    (symbol "TIP41C_0_1"
+      (polyline (pts (xy 0.635 0.635) (xy 2.54 2.54)) (stroke (width 0.254)))
+      (polyline (pts (xy 0.635 -0.635) (xy 2.54 -2.54)) (stroke (width 0.254)))
+      (polyline (pts (xy 0.635 1.905) (xy 0.635 -1.905)) (stroke (width 0.254)))
+      (polyline (pts (xy 1.27 -1.27) (xy 2.54 -2.54)) (stroke (width 0.254)))
+      (polyline (pts (xy 2.413 -1.1938) (xy 2.7178 -1.6002) (xy 1.9812 -2.2352)) (stroke (width 0.254)))
+      (circle (center 1.27 0) (radius 2.8194) (stroke (width 0.254)) (fill (type none)))
+    )
+    (symbol "TIP41C_1_1"
+      (pin passive line (at -5.08 0 0) (length 5.08) (name "B" (effects (font (size 1.27 1.27) (thickness 0.15)))) (number "1" (effects (font (size 1.27 1.27) (thickness 0.15)))))
+      (pin passive line (at 2.54 5.08 270) (length 2.54) (name "C" (effects (font (size 1.27 1.27) (thickness 0.15)))) (number "2" (effects (font (size 1.27 1.27) (thickness 0.15)))))
+      (pin passive line (at 2.54 -5.08 90) (length 2.54) (name "E" (effects (font (size 1.27 1.27) (thickness 0.15)))) (number "3" (effects (font (size 1.27 1.27) (thickness 0.15)))))
+    )
+  )
+
+  (symbol "Connector:Conn_01x02_Pin"
+    (pin_names (offset 1.016) hide)
+    (property "Reference" "J" (id 0) (at 0 2.54 0))
+    (property "Value" "Conn_01x02_Pin" (id 1) (at 0 -5.08 0))
+    (symbol "Conn_01x02_Pin_1_1"
+      (rectangle (start -1.27 -2.413) (end 0 -2.667)
+        (stroke (width 0.1524)) (fill (type none))
+      )
+      (rectangle (start -1.27 0.127) (end 0 -0.127)
+        (stroke (width 0.1524)) (fill (type none))
+      )
+      (rectangle (start -1.27 1.27) (end 1.27 -3.81)
+        (stroke (width 0.254)) (fill (type background))
+      )
+      (pin passive line (at -5.08 0 0) (length 3.81) (name "Pin_1" (effects (font (size 1.27 1.27) (thickness 0.15)))) (number "1" (effects (font (size 1.27 1.27) (thickness 0.15)))))
+      (pin passive line (at -5.08 -2.54 0) (length 3.81) (name "Pin_2" (effects (font (size 1.27 1.27) (thickness 0.15)))) (number "2" (effects (font (size 1.27 1.27) (thickness 0.15)))))
+    )
+  )
+
+  (wire (pts (xy 50 80) (xy 100 80)) (stroke (width 0)) (uuid "w1"))
+  (wire (pts (xy 100 80) (xy 100 100)) (stroke (width 0)) (uuid "w2"))
+  (wire (pts (xy 100 100) (xy 130 100)) (stroke (width 0)) (uuid "w3"))
+  (wire (pts (xy 50 120) (xy 80 120)) (stroke (width 0)) (uuid "w4"))
+  (wire (pts (xy 80 120) (xy 80 140)) (stroke (width 0)) (uuid "w5"))
+  (wire (pts (xy 80 140) (xy 120 140)) (stroke (width 0)) (uuid "w6"))
+  (wire (pts (xy 50 160) (xy 120 160)) (stroke (width 0)) (uuid "w7"))
+  (wire (pts (xy 120 160) (xy 130 160)) (stroke (width 0)) (uuid "w8"))
+  (wire (pts (xy 130 100) (xy 130 60)) (stroke (width 0)) (uuid "w9"))
+  (wire (pts (xy 130 160) (xy 130 200)) (stroke (width 0)) (uuid "w10"))
+  (wire (pts (xy 160 100) (xy 160 140)) (stroke (width 0)) (uuid "w11"))
+  (wire (pts (xy 160 140) (xy 180 140)) (stroke (width 0)) (uuid "w12"))
+
+  (global_label "+20V_IN" (shape input) (at 50 80 180) (fields_autoplaced) (effects (font (size 1.27 1.27) (thickness 0.15)) (justify right)) (uuid "lbl1"))
+  (global_label "GPIO5_PWM" (shape input) (at 50 120 180) (fields_autoplaced) (effects (font (size 1.27 1.27) (thickness 0.15)) (justify right)) (uuid "lbl2"))
+  (global_label "GND" (shape input) (at 50 160 180) (fields_autoplaced) (effects (font (size 1.27 1.27) (thickness 0.15)) (justify right)) (uuid "lbl3"))
+  (global_label "LED_CATHODE" (shape output) (at 130 60 90) (fields_autoplaced) (effects (font (size 1.27 1.27) (thickness 0.15)) (justify left)) (uuid "lbl4"))
+  (global_label "LED_ANODE" (shape output) (at 180 140 0) (fields_autoplaced) (effects (font (size 1.27 1.27) (thickness 0.15)) (justify left)) (uuid "lbl5"))
+
+  (text "R1: 1kΩ\nBase Resistor" (at 85 135))
+  (text "R2: 10kΩ\nPull-down to GND" (at 115 155))
+  (text "Q1: TIP41C\nNPN Power Transistor\nVce(sat)@4A: 0.4V" (at 135 120))
+  (text "C1: 100µF\n25V Rated\nPower Supply Filter" (at 160 125))
+
+)
