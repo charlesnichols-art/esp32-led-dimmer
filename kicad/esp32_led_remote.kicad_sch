@@ -1,0 +1,95 @@
+(kicad_sch (version 20230121)
+
+  (uuid "87654321-4321-4321-4321-abcdef123456")
+
+  (paper "A4")
+
+  (title_block
+    (title "ESP32-C3 LED Remote - ESP-NOW Control")
+    (date "2026-05-28")
+    (rev "1.0")
+    (comment 1 "Wireless Remote with Deep Sleep")
+    (comment 2 "Input: 2x AA (3V) or 1x 3.7V LiPo")
+    (comment 3 "Output: ESP-NOW Commands to Controller")
+  )
+
+  (layers
+    (0 "F.Cu" signal)
+    (31 "B.Cu" signal)
+  )
+
+  (symbol "Device:R"
+    (pin_numbers hide)
+    (pin_names (offset 0.254))
+    (property "Reference" "R" (id 0) (at 2.032 0 90))
+    (property "Value" "R" (id 1) (at 0 0 90))
+    (symbol "R_0_1"
+      (rectangle (start -1.016 -2.54) (end 1.016 2.54)
+        (stroke (width 0.254)) (fill (type none))
+      )
+    )
+    (symbol "R_1_1"
+      (pin passive line (at 0 3.81 270) (length 1.27) (name "~" (effects (font (size 1.27 1.27) (thickness 0.15)))) (number "1" (effects (font (size 1.27 1.27) (thickness 0.15)))))
+      (pin passive line (at 0 -3.81 90) (length 1.27) (name "~" (effects (font (size 1.27 1.27) (thickness 0.15)))) (number "2" (effects (font (size 1.27 1.27) (thickness 0.15)))))
+    )
+  )
+
+  (symbol "Device:C"
+    (pin_numbers hide)
+    (pin_names (offset 0.254))
+    (property "Reference" "C" (id 0) (at 0.635 2.54 0))
+    (property "Value" "C" (id 1) (at 0.635 -2.54 0))
+    (symbol "C_0_1"
+      (polyline (pts (xy -2.032 -0.762) (xy 2.032 -0.762)) (stroke (width 0.508)))
+      (polyline (pts (xy -2.032 0.762) (xy 2.032 0.762)) (stroke (width 0.508)))
+    )
+    (symbol "C_1_1"
+      (pin passive line (at 0 3.81 270) (length 3.048) (name "~" (effects (font (size 1.27 1.27) (thickness 0.15)))) (number "1" (effects (font (size 1.27 1.27) (thickness 0.15)))))
+      (pin passive line (at 0 -3.81 90) (length 3.048) (name "~" (effects (font (size 1.27 1.27) (thickness 0.15)))) (number "2" (effects (font (size 1.27 1.27) (thickness 0.15)))))
+    )
+  )
+
+  (symbol "Switch:SW_Push"
+    (pin_numbers hide)
+    (pin_names (offset 1.016) hide)
+    (property "Reference" "SW" (id 0) (at 1.27 2.54 0))
+    (property "Value" "SW_Push" (id 1) (at 0 -2.54 0))
+    (symbol "SW_Push_0_1"
+      (circle (center -2.032 0) (radius 0.508) (stroke (width 0)) (fill (type none)))
+      (circle (center 2.032 0) (radius 0.508) (stroke (width 0)) (fill (type none)))
+    )
+    (symbol "SW_Push_1_1"
+      (pin passive line (at -5.08 0 0) (length 2.54) (name "1" (effects (font (size 1.27 1.27) (thickness 0.15)))) (number "1" (effects (font (size 1.27 1.27) (thickness 0.15)))))
+      (pin passive line (at 5.08 0 180) (length 2.54) (name "2" (effects (font (size 1.27 1.27) (thickness 0.15)))) (number "2" (effects (font (size 1.27 1.27) (thickness 0.15)))))
+    )
+  )
+
+  (wire (pts (xy 50 80) (xy 80 80)) (stroke (width 0)) (uuid "w1"))
+  (wire (pts (xy 80 80) (xy 80 100)) (stroke (width 0)) (uuid "w2"))
+  (wire (pts (xy 80 100) (xy 100 100)) (stroke (width 0)) (uuid "w3"))
+  (wire (pts (xy 50 120) (xy 70 120)) (stroke (width 0)) (uuid "w4"))
+  (wire (pts (xy 70 120) (xy 70 140)) (stroke (width 0)) (uuid "w5"))
+  (wire (pts (xy 70 140) (xy 100 140)) (stroke (width 0)) (uuid "w6"))
+  (wire (pts (xy 50 160) (xy 60 160)) (stroke (width 0)) (uuid "w7"))
+  (wire (pts (xy 60 160) (xy 60 180)) (stroke (width 0)) (uuid "w8"))
+  (wire (pts (xy 60 180) (xy 100 180)) (stroke (width 0)) (uuid "w9"))
+  (wire (pts (xy 50 220) (xy 100 220)) (stroke (width 0)) (uuid "w10"))
+  (wire (pts (xy 100 100) (xy 130 100)) (stroke (width 0)) (uuid "w11"))
+  (wire (pts (xy 100 140) (xy 130 140)) (stroke (width 0)) (uuid "w12"))
+  (wire (pts (xy 100 180) (xy 130 180)) (stroke (width 0)) (uuid "w13"))
+  (wire (pts (xy 100 220) (xy 130 220)) (stroke (width 0)) (uuid "w14"))
+
+  (global_label "+3.3V" (shape input) (at 50 80 180) (fields_autoplaced) (effects (font (size 1.27 1.27) (thickness 0.15)) (justify right)) (uuid "lbl1"))
+  (global_label "GPIO9_PWR" (shape output) (at 130 100 0) (fields_autoplaced) (effects (font (size 1.27 1.27) (thickness 0.15)) (justify left)) (uuid "lbl2"))
+  (global_label "GPIO7_UP" (shape output) (at 130 140 0) (fields_autoplaced) (effects (font (size 1.27 1.27) (thickness 0.15)) (justify left)) (uuid "lbl3"))
+  (global_label "GPIO8_DN" (shape output) (at 130 180 0) (fields_autoplaced) (effects (font (size 1.27 1.27) (thickness 0.15)) (justify left)) (uuid "lbl4"))
+  (global_label "GND" (shape input) (at 50 220 180) (fields_autoplaced) (effects (font (size 1.27 1.27) (thickness 0.15)) (justify right)) (uuid "lbl5"))
+
+  (text "R1, R2, R3: 10kΩ\nPull-up Resistors\nfor each button" (at 75 155))
+  (text "SW1: POWER\nWake source\nfrom deep sleep" (at 85 95))
+  (text "SW2: UP\nBrightness increase" (at 75 135))
+  (text "SW3: DOWN\nBrightness decrease" (at 75 175))
+  (text "C1: 100µF\n6.3V Rated\nPower Supply Filter" (at 105 220))
+  (text "Battery: 2x AA (3V) or\n1x 3.7V LiPo\nSleep: 50µA\nAwake: 80mA" (at 50 250))
+
+)
